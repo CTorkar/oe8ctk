@@ -1,50 +1,243 @@
-<!-- Hintergrund und zentrierte Struktur -->
-<div style="background-color:#f4f8fb; border-radius:15px; font-family:Arial,sans-serif; margin-bottom:auto; margin-left:auto; margin-right:auto; margin-top:auto; max-width:900px; padding:20px">
-<h2>Willkommen auf meiner QRZ-Seite!</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OE8CTK | Amateur Radio & Electronics Projects</title>
 
-<hr /><!-- Begrüßung -->
-<p style="color:#333333; font-size:1.1em"><strong>Hallo und vielen Dank f&uuml;r deinen Besuch!</strong><br />
-Mein Name ist <strong>Chris</strong>, leidenschaftlicher Bastler &amp; Funkamateur mit einem besonderen Faible f&uuml;r Technik, Elektronik und den Selbstbau.</p>
-<!-- Gerätebox -->
+<style>
+/* Allgemein */
+body{
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:#f2f6fa;
+    margin:0;
+    color:#222;
+}
+header{
+    background:#0c2d48;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+header h1{
+    margin:0;
+    font-size:32px;
+}
+header p{
+    margin-top:10px;
+    opacity:0.8;
+}
 
-<div style="background-color:#e6f0fa; border-radius:10px; margin-top:15px; padding:15px">
-<h3>Meine Funkger&auml;te</h3>
+/* Slider */
+.slider{
+    position:relative;
+    max-width:1000px;
+    margin:40px auto;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+.slide{
+    display:none;
+    position:relative;
+}
+.slide img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition: transform 0.5s;
+}
+.slide .caption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    padding:20px;
+    font-size:16px;
+}
 
-<ul style="line-height:1.6">
-	<li><strong>Yaesu FT-891</strong></li>
-	<li><strong>Yaesu FT-290R2</strong>&nbsp;</li>
-	<li><strong>Maas Handfunkger&auml;t</strong>&nbsp;</li>
-	<li><strong>QRP Labs QMX</strong> &ndash; <em>Eigenbau</em></li>
-	<li><strong>Selbstbau 20m TRX</strong></li>
-</ul>
+/* Project Grid */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    cursor:pointer;
+    background:white;
+}
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+}
+.card:hover img{
+    transform:scale(1.15);
+}
+/* Overlay */
+.overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.8);
+    color:white;
+    padding:20px;
+    transform:translateY(100%);
+    transition:0.35s ease;
+}
+.card:hover .overlay{
+    transform:translateY(0);
+}
+.overlay h3{
+    margin-top:0;
+    margin-bottom:8px;
+}
+.overlay p{
+    font-size:14px;
+    opacity:0.9;
+}
+/* Title always visible */
+.title{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    padding:6px 10px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+/* Footer */
+footer{
+    margin-top:60px;
+    padding:25px;
+    background:#0c2d48;
+    color:white;
+    text-align:center;
+    font-size:14px;
+}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>OE8CTK</h1>
+<p>Amateur Radio • Electronics • Homebrew Projects</p>
+</header>
+
+<!-- Slider -->
+<div class="slider">
+<div class="slide">
+<img src="images/trx20m.jpg" alt="20m TRX">
+<div class="caption">
+<h3>20m Homebrew Transceiver</h3>
+<p>Compact QRP transceiver for portable HF operation.</p>
 </div>
-<!-- Interessenbox -->
-
-<div style="background-color:#e6f0fa; border-radius:10px; margin-top:15px; padding:15px">
-<h3>Meine Interessen</h3>
-
-<ul style="line-height:1.6">
-	<li>Selbstbau von Antennen &ndash; vom Drahtdipol bis zur Portabelantenne</li>
-	<li>Entwicklung &amp; Optimierung eigener Ger&auml;te und Vorrichtungen</li>
-	<li>QRP-Betrieb</li>
-	<li>Portabel Betrieb</li>
-	<li>Elektronik &amp; Mechatronik &ndash; Beruf &amp; Hobby</li>
-</ul>
-</div>
-<!-- Beruf -->
-
-<div style="background-color:#f0f5f9; border-radius:10px; margin-top:15px; padding:15px">
-<h3>Beruflicher Hintergrund</h3>
-
-<p style="margin-bottom:0; margin-left:0; margin-right:0; margin-top:0">Ich bin <strong>Elektroniker/Mechatroniker</strong> mit Erfahrung in der Entwicklung von mechatronischen&nbsp;Systemen. Dieses Wissen nutze ich, um kreative Funkprojekte umzusetzen und immer wieder Neues auszuprobieren.</p>
 </div>
 
-<hr /><!-- Bilder -->
-<p><img alt="QMX mini im FT8 Betrieb" src="/hampages/oe8ctk/IMG_4306_jpeg.jpg" style="border-radius:10px; border:2px solid #cccccc; height:331px; margin:5px; width:480px" /> <img alt="Selbstbau TRX" src="/hampages/oe8ctk/IMG_4417.JPEG.jpg" style="border-radius:10px; border:2px solid #cccccc; height:331px; margin:5px; width:248px" />&nbsp;&nbsp;<img alt="SOTA Aktivierung" src="/hampages/oe8ctk/IMG_4340.JPEG" style="border-radius:10px; border:2px solid #cccccc; height:270px; margin:5px; width:360px" />&nbsp;<img alt="Selbstbau 2m Moxon Antenne" src="/hampages/oe8ctk/IMG_4414.JPEG.jpg" style="border-radius:10px; border:2px solid #cccccc; height:331px; margin:5px; width:360px" /></p>
-
-<p><img src="/hampages/oe8ctk/IMG_4504.JPEG" style="border-radius:10px; border:2px solid #cccccc; height:270px; margin:5px; width:360px" /><img src="/hampages/oe8ctk/IMG_4505.JPEG" style="border-radius:10px; border:2px solid #cccccc; height:270px; margin:5px; width:360px" /></p>
-<!-- Abschluss -->
-
-<p style="color:#003366; font-size:1.1em"><strong>73 de Chris</strong><br />
-<em>[OE8CTK]</em></p>
+<div class="slide">
+<img src="images/moxon.jpg" alt="2m Moxon">
+<div class="caption">
+<h3>2m Moxon Antenna</h3>
+<p>Lightweight directional antenna optimized for portable use.</p>
 </div>
+</div>
+
+<div class="slide">
+<img src="images/qmx.jpg" alt="QMX Setup">
+<div class="caption">
+<h3>QMX Digital Station</h3>
+<p>Portable digital station for FT8 and weak-signal modes.</p>
+</div>
+</div>
+</div>
+
+<!-- Project Grid -->
+<div class="container">
+<div class="grid">
+
+<a href="projects/trx20m.html">
+<div class="card">
+<img src="images/trx20m.jpg" alt="20m TRX">
+<div class="title">20m Homebrew Transceiver</div>
+<div class="overlay">
+<h3>20m Homebrew Transceiver</h3>
+<p>Compact QRP transceiver for portable HF operation.</p>
+</div>
+</div>
+</a>
+
+<a href="projects/moxon2m.html">
+<div class="card">
+<img src="images/moxon.jpg" alt="2m Moxon">
+<div class="title">2m Moxon Antenna</div>
+<div class="overlay">
+<h3>2m Moxon Antenna</h3>
+<p>Lightweight directional antenna optimized for portable use.</p>
+</div>
+</div>
+</a>
+
+<a href="projects/qmxsetup.html">
+<div class="card">
+<img src="images/qmx.jpg" alt="QMX Setup">
+<div class="title">QMX Digital Station</div>
+<div class="overlay">
+<h3>QMX Digital Station</h3>
+<p>Portable digital station for FT8 and weak-signal modes.</p>
+</div>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 OE8CTK – Amateur Radio & Electronics Projects</p>
+<p>Responsible for content: Chris – OE8CTK | Austria | Amateur Radio Hobby Project</p>
+<p style="opacity:0.8;">Last updated: <span id="date"></span></p>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Slider
+let slideIndex = 0;
+showSlides();
+function showSlides(){
+    let slides = document.getElementsByClassName("slide");
+    for(let i=0;i<slides.length;i++){
+        slides[i].style.display="none";
+    }
+    slideIndex++;
+    if(slideIndex>slides.length){slideIndex=1;}
+    slides[slideIndex-1].style.display="block";
+    setTimeout(showSlides,10000); // 10s
+}
+
+// Footer date
+document.getElementById("date").innerText = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>
