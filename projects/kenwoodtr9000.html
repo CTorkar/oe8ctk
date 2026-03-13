@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenwood TR-9000 Repair and Retrofit | OE8CTK</title>
+
+<style>
+body{
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:#f2f6fa;
+    margin:0;
+    color:#222;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+a.back{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#0c2d48;
+    font-weight:bold;
+    text-decoration:none;
+}
+h1{
+    margin-top:0;
+}
+img{
+    width:100%;
+    border-radius:10px;
+    margin:25px 0;
+    object-fit:cover;
+}
+.specs{
+    background:#f4f7fb;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+footer{
+    margin-top:40px;
+    padding:25px;
+    background:#0c2d48;
+    color:white;
+    text-align:center;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="../index.html">← Back to Projects</a>
+
+<h1>20m Homebrew Transceiver</h1>
+
+<p>
+This project is a compact homebrew QRP transceiver designed for portable HF operation.
+It focuses on low power consumption and simplicity, ideal for field activations like SOTA.
+</p>
+
+<img src="../images/trx20m.jpg" alt="20m TRX">
+
+<div class="specs">
+<h3>Technical Specifications</h3>
+<ul>
+<li>Band: 20m (14 MHz)</li>
+<li>Output Power: approx. 5 W</li>
+<li>Modes: CW / Digital</li>
+<li>Custom RF design</li>
+<li>Optimized for portable operation</li>
+</ul>
+</div>
+
+<h2>Project Overview</h2>
+<p>
+The design emphasizes simplicity and efficiency. RF stages are optimized for stable operation
+with minimal components. The transceiver is intended for portable field use.
+</p>
+
+<h2>Development Notes</h2>
+<p>
+Future updates may include additional filtering, improved frequency stability, and
+enclosure integration.
+</p>
+
+</div>
+
+<footer>
+<p>© 2026 OE8CTK – Amateur Radio & Electronics Projects</p>
+<p>Responsible for content: Chris – OE8CTK | Austria | Amateur Radio Hobby Project</p>
+<p style="opacity:0.8;">Last updated: <span id="date"></span></p>
+</footer>
+
+<script>
+// Automatisches Datum im Footer
+document.getElementById("date").innerText = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>
