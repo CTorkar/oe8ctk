@@ -32,7 +32,7 @@ description:"Portable digital station for FT8 and weak signal modes."
 
 {
 title:"Kenwood TR9000 Repair",
-image:"images/tr9000.jpg",
+image:"images/kenwoodtr9000/1.jpg",
 link:"projects/kenwood_tr9000.html",
 tags:["repair","transceiver"],
 description:"Repair and modification of a classic 2m transceiver."
