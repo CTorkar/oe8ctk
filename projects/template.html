@@ -9,7 +9,7 @@
 
 /* Galerie Vorschaubilder */
 .gallery img {
-    width: 300px;         /* <- Hier kannst du die Vorschaubild-Breite anpassen */
+    width: 300px;         /* <- Hier Vorschaubildgröße anpassen */
     height: auto;
     object-fit: cover;
     margin: 10px;
@@ -18,56 +18,90 @@
     transition: transform 0.3s ease;
 }
 
-/* Optional: Hover-Zoom */
+/* Hover-Zoom */
 .gallery img:hover {
     transform: scale(1.05);
 }
 
 /* Responsive Anpassungen */
 @media screen and (max-width: 768px) {
-    .gallery img {
-        width: 200px;      /* Kleinere Vorschaubilder auf Tablets */
-    }
+    .gallery img { width: 200px; }
 }
 @media screen and (max-width: 480px) {
-    .gallery img {
-        width: 150px;      /* Kleinste Vorschau auf Smartphones */
-    }
+    .gallery img { width: 150px; }
+}
+
+/* Back to Main Page Link */
+.back-link {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 8px 16px;
+    background: #0c2d48;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.back-link:hover {
+    background: #144d7a;
 }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Project Title</h1>
-<p>OE8CTK Project Template</p>
+<h1>Project Template</h1>
+<p>OE8CTK Project</p>
 </header>
 
-<main>
+<main class="container">
+
+<!-- ===== Back to Main Page Link at the top ===== -->
+<a href="../index.html" class="back-link">← Back to Main Page</a>
+
+<!-- Project Introduction -->
+<section>
+<h2>Project Overview</h2>
+<p>Describe your project here. Provide an overview of goals, challenges, and expected outcomes.</p>
+</section>
+
+<!-- Example Step -->
 <section>
 <h2>Step 1: Example Step</h2>
 <p>Describe the first step of your project here.</p>
 
-<!-- ===== Galerie Vorschaubilder ===== -->
+<!-- ===== Galerie Vorschaubilder für Lightbox ===== -->
 <div class="gallery">
-  <img src="../images/example1.jpg" alt="Step 1">
-  <img src="../images/example2.jpg" alt="Step 1 Detail">
-  <!-- Zum Hinzufügen weiterer Bilder kopiere <img> hierher -->
+    <img src="../images/example1.jpg" alt="Step 1">
+    <img src="../images/example2.jpg" alt="Step 1 Detail">
+    <!-- Neue Bilder hier hinzufügen -->
 </div>
-<!-- ================================ -->
-
 </section>
 
 <section>
 <h2>Step 2: Another Step</h2>
 <p>Describe next steps here.</p>
 <div class="gallery">
-  <img src="../images/example3.jpg" alt="Step 2">
+    <img src="../images/example3.jpg" alt="Step 2">
 </div>
 </section>
+
+<!-- ===== Back to Main Page Link at the bottom ===== -->
+<a href="../index.html" class="back-link">← Back to Main Page</a>
+
 </main>
 
-<!-- ===== Lightbox Script ===== -->
+<footer>
+<p>© 2026 OE8CTK – Amateur Radio & Electronics Projects</p>
+<p style="opacity:0.8;">Last updated: <span id="date"></span></p>
+</footer>
+
+<!-- Lightbox Script -->
 <script src="../gallery.js"></script>
+<script>
+document.getElementById("date").innerText = new Date().toLocaleDateString();
+</script>
+
 </body>
 </html>
