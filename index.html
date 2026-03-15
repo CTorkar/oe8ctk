@@ -4,139 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OE8CTK | Amateur Radio & Electronics Projects</title>
-
-<style>
-/* Allgemein */
-body{
-    font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background:#f2f6fa;
-    margin:0;
-    color:#222;
-}
-header{
-    background:#0c2d48;
-    color:white;
-    padding:40px 20px;
-    text-align:center;
-}
-header h1{
-    margin:0;
-    font-size:32px;
-}
-header p{
-    margin-top:10px;
-    opacity:0.8;
-}
-
-/* Slider */
-.slider{
-    position:relative;
-    max-width:1000px;
-    margin:40px auto;
-    overflow:hidden;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-.slide{
-    display:none;
-    position:relative;
-}
-.slide img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    transition: transform 0.5s;
-}
-.slide .caption{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    background:rgba(0,0,0,0.7);
-    color:white;
-    padding:20px;
-    font-size:16px;
-}
-
-/* Project Grid */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-}
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-.card{
-    position:relative;
-    overflow:hidden;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    cursor:pointer;
-    background:white;
-}
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:transform 0.5s ease;
-}
-.card:hover img{
-    transform:scale(1.15);
-}
-/* Overlay */
-.overlay{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    background:rgba(0,0,0,0.8);
-    color:white;
-    padding:20px;
-    transform:translateY(100%);
-    transition:0.35s ease;
-}
-.card:hover .overlay{
-    transform:translateY(0);
-}
-.overlay h3{
-    margin-top:0;
-    margin-bottom:8px;
-}
-.overlay p{
-    font-size:14px;
-    opacity:0.9;
-}
-/* Title always visible */
-.title{
-    position:absolute;
-    top:10px;
-    left:10px;
-    background:rgba(0,0,0,0.6);
-    color:white;
-    padding:6px 10px;
-    border-radius:6px;
-    font-weight:bold;
-    font-size:16px;
-}
-
-/* Footer */
-footer{
-    margin-top:60px;
-    padding:25px;
-    background:#0c2d48;
-    color:white;
-    text-align:center;
-    font-size:14px;
-}
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -146,96 +14,38 @@ a{
 </header>
 
 <!-- Slider -->
-<div class="slider">
-<div class="slide">
-<img src="images/kenwoodtr9000/1.jpg" alt="20m TRX">
-<div class="caption">
-<h3>Kenwood TR-9000</h3>
-<p>Repair and retrofit of an 80's 2m all mode transceiver</p>
-</div>
-</div>
+<div class="slider" id="slider"></div>
 
-<div class="slide">
-<img src="images/moxon.jpg" alt="2m Moxon">
-<div class="caption">
-<h3>2m Moxon Antenna</h3>
-<p>Lightweight directional antenna optimized for portable use.</p>
-</div>
-</div>
+<div class="container">
 
-<div class="slide">
-<img src="images/qmx.jpg" alt="QMX Setup">
-<div class="caption">
-<h3>QMX Digital Station</h3>
-<p>Portable digital station for FT8 and weak-signal modes.</p>
-</div>
-</div>
+<!-- Filter -->
+<div class="filterbar">
+<label>Filter:</label>
+<select onchange="filterProjects(this.value)">
+<option value="all">All Projects</option>
+<option value="transceiver">Transceivers</option>
+<option value="antenna">Antennas</option>
+<option value="digital">Digital</option>
+<option value="portable">Portable</option>
+<option value="repair">Repairs</option>
+</select>
 </div>
 
 <!-- Project Grid -->
-<div class="container">
-<div class="grid">
-
-<a href="projects/kenwoodtr9000.html">
-<div class="card">
-<img src="images/kenwoodtr9000/1.jpg" alt="Kenwood 2m TRX">
-<div class="title">Kenwood TR-9000</div>
-<div class="overlay">
-<h3>Kenwood TR-9000</h3>
-<p>Repair and retrofit of an 80's 2m all mode transceiver.</p>
-</div>
-</div>
-</a>
-
-<a href="projects/moxon2m.html">
-<div class="card">
-<img src="images/moxon.jpg" alt="2m Moxon">
-<div class="title">2m Moxon Antenna</div>
-<div class="overlay">
-<h3>2m Moxon Antenna</h3>
-<p>Lightweight directional antenna optimized for portable use.</p>
-</div>
-</div>
-</a>
-
-<a href="projects/qmxsetup.html">
-<div class="card">
-<img src="images/qmx.jpg" alt="QMX Setup">
-<div class="title">QMX Digital Station</div>
-<div class="overlay">
-<h3>QMX Digital Station</h3>
-<p>Portable digital station for FT8 and weak-signal modes.</p>
-</div>
-</div>
-</a>
+<div class="grid" id="projectGrid"></div>
 
 </div>
-</div>
 
-<!-- Footer -->
 <footer>
 <p>© 2026 OE8CTK – Amateur Radio & Electronics Projects</p>
-<p>Responsible for content: Chris – OE8CTK | Austria | Amateur Radio Hobby Project</p>
 <p style="opacity:0.8;">Last updated: <span id="date"></span></p>
 </footer>
 
 <!-- Scripts -->
+<script src="projects.js"></script>
+<script src="slider.js"></script>
+<script src="filter.js"></script>
 <script>
-// Slider
-let slideIndex = 0;
-showSlides();
-function showSlides(){
-    let slides = document.getElementsByClassName("slide");
-    for(let i=0;i<slides.length;i++){
-        slides[i].style.display="none";
-    }
-    slideIndex++;
-    if(slideIndex>slides.length){slideIndex=1;}
-    slides[slideIndex-1].style.display="block";
-    setTimeout(showSlides,10000); // 10s
-}
-
-// Footer date
 document.getElementById("date").innerText = new Date().toLocaleDateString();
 </script>
 
