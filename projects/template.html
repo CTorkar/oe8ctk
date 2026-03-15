@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Template | OE8CTK</title>
+<style>
+/* ===== Projektseiten CSS ===== */
+
+/* Galerie Vorschaubilder */
+.gallery img {
+    width: 300px;         /* <- Hier kannst du die Vorschaubild-Breite anpassen */
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;      /* Zeigt an, dass das Bild klickbar ist */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Hover-Zoom */
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 768px) {
+    .gallery img {
+        width: 200px;      /* Kleinere Vorschaubilder auf Tablets */
+    }
+}
+@media screen and (max-width: 480px) {
+    .gallery img {
+        width: 150px;      /* Kleinste Vorschau auf Smartphones */
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Project Title</h1>
+<p>OE8CTK Project Template</p>
+</header>
+
+<main>
+<section>
+<h2>Step 1: Example Step</h2>
+<p>Describe the first step of your project here.</p>
+
+<!-- ===== Galerie Vorschaubilder ===== -->
+<div class="gallery">
+  <img src="../images/example1.jpg" alt="Step 1">
+  <img src="../images/example2.jpg" alt="Step 1 Detail">
+  <!-- Zum Hinzufügen weiterer Bilder kopiere <img> hierher -->
+</div>
+<!-- ================================ -->
+
+</section>
+
+<section>
+<h2>Step 2: Another Step</h2>
+<p>Describe next steps here.</p>
+<div class="gallery">
+  <img src="../images/example3.jpg" alt="Step 2">
+</div>
+</section>
+</main>
+
+<!-- ===== Lightbox Script ===== -->
+<script src="../gallery.js"></script>
+</body>
+</html>
