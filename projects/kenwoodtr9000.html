@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kenwood TR9000 Repair | OE8CTK</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+/* ===== Projektseiten CSS für Vorschaubilder ===== */
+.gallery img {
+    width: 300px;         /* <- Hier die Vorschaubildgröße anpassen */
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;      /* Zeigt an, dass das Bild klickbar ist */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Hover-Zoom */
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 768px) {
+    .gallery img { width: 200px; }
+}
+@media screen and (max-width: 480px) {
+    .gallery img { width: 150px; }
+}
+</style>
 </head>
 <body>
 
@@ -27,9 +52,10 @@
 <p>The original SO239 connector was replaced with a BNC for easier connection to test equipment.</p>
 
 <div class="gallery">
-    <!-- Add images related to this step -->
+    <!-- ===== Galerie Vorschaubilder für Lightbox ===== -->
     <img src="../images/kenwoodtr9000/1.jpg" alt="Original SO239">
     <img src="../images/tr9000_rf2.jpg" alt="BNC conversion">
+    <!-- Neue Bilder hier hinzufügen -->
 </div>
 </section>
 
@@ -85,6 +111,7 @@
 <!-- Scripts -->
 <script src="../gallery.js"></script>
 <script>
+/* ===== Footer Date ===== */
 document.getElementById("date").innerText = new Date().toLocaleDateString();
 </script>
 
